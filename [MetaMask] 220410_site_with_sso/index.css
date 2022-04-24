@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.group {
+    margin: 3rem;
+}
+
+.group label {
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.group .key {
+    color: dimgray;
+}
+
+.group .val {
+    color: dimgray;
+    font-weight: 600;
+}
