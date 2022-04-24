@@ -11,6 +11,10 @@
     margin-top: 1rem;
 }
 
+.group p {
+    margin-left: 1rem;
+}
+
 .group .key {
     color: dimgray;
 }
@@ -18,4 +22,9 @@
 .group .val {
     color: dimgray;
     font-weight: 600;
+}
+
+.group .desc {
+    color: gray;
+    font-style: italic;
 }

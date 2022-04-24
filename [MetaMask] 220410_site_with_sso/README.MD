@@ -1,4 +1,4 @@
-# (Sample) Website with MetaMask SSO
+# [MetaMask] Site with SSO
 
 *使用 `MetaMask` 登入的網站*
 
@@ -11,22 +11,21 @@
 
 | Key  | Value|
 |------|------|
-| 環境 | Win10 |
+| 環境 |1. Win 10<br>2. Mac OS|
 | IDE  | VSCode|
 | 語言| html/javascript|
-| 其他套件| X |
+| 其他套件| 1. ehereum APIs<br>2. jquery 3.6.0<br>3. bootstrap 5.1.3 |
 
 ## 參考資料
 
-* [MetaMask Developers DOC](https://docs.metamask.io/guide/getting-started.html#basic-considerations)
-
+* [Getting Started | MetaMask Docs](https://docs.metamask.io/guide/getting-started.html#basic-considerations)
+* [Ethereum Provider API | MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html)
+* [Chain Lists](https://chainlist.org/)
+* [Web 3.0 browser in 2022](https://browsertouse.com/blog/5098/best-web-3-0-browsers/)
 
 ## 異動歷史
 
 |  日期  |  描述  |
 |--------|--------|
-| 220410 | 1. 新增專案 |
-|        | 2. 查詢可用資源 |
-|        | 3. README.MD |
-|        | 4. 站台開啟MetaMask錢包登入 |
+| 220410 |1. 新增專案<br>2. 查詢可用資源<br>3. README.MD<br>4. 站台開啟MetaMask錢包登入 |
 | 220424 | |

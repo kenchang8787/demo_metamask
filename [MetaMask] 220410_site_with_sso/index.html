@@ -10,7 +10,6 @@
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="index.css">
 
-
     <!-- jquery 3.6.0 -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
         integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
@@ -26,33 +25,59 @@
 
 </head>
 
-<body>
+<body class="row">
+    <div class="col-md-8">
+        <div class="group">
+            <button class="btn btn-primary" onclick="IsMetaMaskInstalled()">偵測MetaMask</button>
 
-    <div class="group">
-        <button class="btn btn-primary" onclick="IsMetaMaskInstalled()">偵測MetaMask</button>
+            <div>
+                <label class="key" for="metamask_installed">是否安裝MetaMask: </label>
+                <label class="val" id="metamask_installed"></label>
+            </div>
 
-        <div>
-            <label class="key" for="metamask_installed">是否安裝MetaMask: </label>
-            <label class="val" id="metamask_installed"></label>
+            <div>
+                <label class="key" for="metamask_ismetamask">是否為MetaMask: </label>
+                <label class="val" id="metamask_ismetamask"></label>
+                <p class="desc">
+                    (區分當前瀏覽器為MetaMask或其他兼容以太坊的瀏覽器
+                    <a href="https://browsertouse.com/blog/5098/best-web-3-0-browsers/" target="blank">[link]</a>
+                    )
+                </p>
+            </div>
+
+            <div>
+                <label class="key" for="metamask_network">
+                    當前網路
+                    <a href="https://chainlist.org/" target="blank">[link]</a>
+                    :
+                </label>
+                <label class="val" id="metamask_network"></label>
+            </div>
         </div>
 
-        <div>
-            <label class="key" for="metamask_network">當前網路: </label>
-            <label class="val" id="metamask_network"></label>
+        <div class="group">
+            <button class="btn btn-primary" onclick="ConnToMetaMask()">開啟MetaMask錢包</button>
+
+            <div>
+                <label class="key" for="metamask_address">已連線的錢包地址: </label>
+                <label class="val" id="metamask_address"></label>
+            </div>
+        </div>
+
+        <div class="group">
+            <button class="btn btn-primary" onclick="ConnCustomNetwork()">開啟錢包並設定連線網路</button>
+
+            <div>
+                <label class="key" for="metamask_switch_network">欲切換網路至Kovan(42): </label>
+                <label class="val" id="metamask_switch_network"></label>
+            </div>
         </div>
     </div>
 
-    <div class="group">
-        <button class="btn btn-primary" onclick="ConnToMetaMask()">開啟MetaMask錢包</button>
-
-        <div>
-            <label class="key" for="wallet_address">已連線的錢包地址: </label>
-            <label class="val" id="wallet_address"></label>
-        </div>
-    </div>
-
-    <div class="group">
-        <button class="btn btn-primary" onclick="">開啟錢包並設定連線網路</button>
+    <div class="container col-md-4">
+        <label id="event-log">
+            
+        </label>
     </div>
 
 </body>
