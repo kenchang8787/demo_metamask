@@ -1,33 +1,33 @@
 # [MetaMask] Site with SSO
 
-*ä½¿ç”¨ `MetaMask` ç™»å…¥çš„[ç¶²ç«™](/)*
+*¨Ï¥Î `MetaMask` µn¤Jªº[ºô¯¸](/)*
 
-## å°ˆæ¡ˆç›®æ¨™
+## ±M®×¥Ø¼Ğ
 
-1. è©¦åœ–è®“ç´” *html/javascript* ç¶²ç«™ä½¿ç”¨ *MetaMask Plugin* ç™»å…¥, ä¸¦å–å¾—**ç”¨æˆ¶å…¬é–‹åœ°å€**.
-2. è©¦åœ–è®“ç´” *html/javascript* ç¶²ç«™è¨­ç½®ç”¨æˆ¶çš„ *MeataMask Plugin* è½‰å¸³è‡³**ç‰¹å®šç¶²è·¯(Network)å’Œåœ°å€(Address)**.
+1. ¸Õ¹ÏÅı¯Â *html/javascript* ºô¯¸¨Ï¥Î *MetaMask Plugin* µn¤J, ¨Ã¨ú±o**¥Î¤á¤½¶}¦a§}**.
+2. ¸Õ¹ÏÅı¯Â *html/javascript* ºô¯¸³]¸m¥Î¤áªº *MeataMask Plugin* Âà±b¦Ü**¯S©wºô¸ô(Network)©M¦a§}(Address)**.
 
-## å¯¦ä½œ
+## ¹ê§@
 
 | Key  | Value|
 |------|------|
-| ç’°å¢ƒ |1. Win 10<br>2. Mac OS|
+| Àô¹Ò |1. Win 10<br>2. Mac OS|
 | IDE  | VSCode|
-| èªè¨€| html/javascript|
-| å…¶ä»–å¥—ä»¶| 1. ehereum APIs<br>2. jquery 3.6.0<br>3. bootstrap 5.1.3 |
+| »y¨¥| html/javascript|
+| ¨ä¥L®M¥ó| 1. ehereum APIs<br>2. jquery 3.6.0<br>3. bootstrap 5.1.3 |
 
-## åƒè€ƒè³‡æ–™
+## °Ñ¦Ò¸ê®Æ
 
 * [Getting Started | MetaMask Docs](https://docs.metamask.io/guide/getting-started.html#basic-considerations)
 * [Ethereum Provider API | MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html)
 * [RPC API | MetaMask Docs](https://docs.metamask.io/guide/rpc-api.html#table-of-contents)
 * [RPC API PlayGround](https://metamask.github.io/api-playground/api-documentation/)
 
-## ç•°å‹•æ­·å²
+## ²§°Ê¾ú¥v
 
-|  æ—¥æœŸ  |  æè¿°  |
+|  ¤é´Á  |  ´y­z  |
 |--------|--------|
-| 220410 |ã€‚æ–°å¢å°ˆæ¡ˆ<br>ã€‚æŸ¥è©¢å¯ç”¨è³‡æº<br>ã€‚README.MD<br>ã€‚API-é–‹å•ŸéŒ¢åŒ…|
-| 220424 |ã€‚API-é€£ç·šæŒ‡å®šç¶²è·¯<br>ã€‚éŒ¢åŒ…è®Šæ›´ç›£æ§äº‹ä»¶<br>ã€‚ç¶²è·¯è®Šæ›´ç›£æ§äº‹ä»¶<br>ã€‚LOGæ©Ÿåˆ¶<br>ã€‚æ–°å¢æè¿°|
-| 220425 |ã€‚API-å–å¾—é¤˜é¡<br>ã€‚API-æ–°å¢ä¸¦é€£ç·šè‡³æŒ‡å®šç¶²è·¯<br>ã€‚API-æ–°å¢è³‡ç”¢<br>ã€‚API-éŒ¢åŒ…äº¤æ˜“|
-| 220426 |ã€‚API-é›»å­ç°½å|
+| 220410 |¡C·s¼W±M®×<br>¡C¬d¸ß¥i¥Î¸ê·½<br>¡CREADME.MD<br>¡CAPI-¶}±Ò¿ú¥]|
+| 220424 |¡CAPI-³s½u«ü©wºô¸ô<br>¡C¿ú¥]ÅÜ§óºÊ±±¨Æ¥ó<br>¡Cºô¸ôÅÜ§óºÊ±±¨Æ¥ó<br>¡CLOG¾÷¨î<br>¡C·s¼W´y­z|
+| 220425 |¡CAPI-¨ú±o¾lÃB<br>¡CAPI-·s¼W¨Ã³s½u¦Ü«ü©wºô¸ô<br>¡CAPI-·s¼W¸ê²£<br>¡CAPI-¿ú¥]¥æ©ö|
+| 220426 |¡CAPI-¹q¤lÃ±¦W|
