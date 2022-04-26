@@ -1,6 +1,6 @@
 # [MetaMask] Site with SSO
 
-*使用 `MetaMask` 登入的網站*
+*使用 `MetaMask` 登入的[網站](/)*
 
 ## 專案目標
 
@@ -20,12 +20,14 @@
 
 * [Getting Started | MetaMask Docs](https://docs.metamask.io/guide/getting-started.html#basic-considerations)
 * [Ethereum Provider API | MetaMask Docs](https://docs.metamask.io/guide/ethereum-provider.html)
-* [Chain Lists](https://chainlist.org/)
-* [Web 3.0 browser in 2022](https://browsertouse.com/blog/5098/best-web-3-0-browsers/)
+* [RPC API | MetaMask Docs](https://docs.metamask.io/guide/rpc-api.html#table-of-contents)
+* [RPC API PlayGround](https://metamask.github.io/api-playground/api-documentation/)
 
 ## 異動歷史
 
 |  日期  |  描述  |
 |--------|--------|
-| 220410 |1. 新增專案<br>2. 查詢可用資源<br>3. README.MD<br>4. 站台開啟MetaMask錢包登入 |
-| 220424 | |
+| 220410 |。新增專案<br>。查詢可用資源<br>。README.MD<br>。API-開啟錢包|
+| 220424 |。API-連線指定網路<br>。錢包變更監控事件<br>。網路變更監控事件<br>。LOG機制<br>。新增描述|
+| 220425 |。API-取得餘額<br>。API-新增並連線至指定網路<br>。API-新增資產<br>。API-錢包交易|
+| 220426 |。API-電子簽名|
