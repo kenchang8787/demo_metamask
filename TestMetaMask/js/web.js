@@ -161,10 +161,10 @@ async function AddAsset() {
         params: {
             type: 'ERC20',
             options: {
-                address: "0xb60e8dd61c5d32be8058bb8eb970870f07233155",
-                symbol: "FOO",
-                decimals: 18,
-                image: "https: //foo.io/token-image.svg"
+                address: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+                symbol: "PoS",
+                decimals: 6,
+                image: "https://polygonscan.com/token/images/tether_32.png"
             }
         }
     })

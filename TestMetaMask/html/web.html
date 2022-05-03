@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example</title>
+    <title>Web Test</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="../assets/fox.png"/>
 
     <!-- custom css -->
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="../css/web.css">
 
     <!-- jquery 3.6.0 -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
@@ -20,11 +23,8 @@
         integrity='sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=='
         crossorigin='anonymous' />
 
-    <!-- web 3.0 js -->
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-
     <!-- custom js  -->
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="../js/web.js"></script>
 
     <!-- vConsole -->
     <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.5/vconsole.min.js"></script>
@@ -35,17 +35,7 @@
 
 </head>
 
-
-
 <body class="row">
-    <!-- README -->
-    <div>
-        <h4>
-            <README class="MD">
-                <a href="/README.md">README</a>
-            </README>
-        </h4>
-    </div>
 
     <!-- 方法集合 -->
     <div class="col-md-6">
@@ -158,7 +148,7 @@
             <button class="btn btn-primary" onclick="AddAsset()">新增檢視的資產</button>
 
             <div>
-                <label class="key" for="metamask_add_asset">在錢包中追蹤新的Token</label>
+                <label class="key" for="metamask_add_asset">在錢包中追蹤新的Token: <a href="https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f">Polygon USDT</a></label>
                 <label class="val" id="metamask_add_asset"></label>
             </div>
         </div>

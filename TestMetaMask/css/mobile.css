@@ -3,24 +3,22 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 body {
-    padding: 3rem;
-}
-
-README {
-    margin: 0 0 0 2rem;
+    padding: 1rem;
 }
 
 .group {
-    margin: 2rem 0 0 2rem;
+    padding: 1rem 0 0 0.5rem;
+    font-size: 1rem;
+    word-break: break-all;
 }
 
 .group label {
-    margin-left: 1rem;
-    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .group p {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
 }
 
 .group .key {
@@ -33,7 +31,7 @@ README {
 }
 
 .group .desc {
-    margin: 0 0 0 5rem;
+    margin: 0 0 0 2rem;
 }
 
 .group .desc span {
@@ -42,7 +40,7 @@ README {
 }
 
 .group input {
-    margin: 1rem 0 0 1rem;
+    margin: 0.5rem 0 0 0.5rem;
     width: 70%;
 }
 
@@ -50,9 +48,4 @@ README {
     color: silver;
     font-style: italic;
     margin: 1rem 0 0 5rem;
-}
-
-.container .log {
-    margin: 2rem 0 0 2rem;
-    color: gray;
 }
