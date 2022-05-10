@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MetaMask Test</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="assets/fox.png" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <!-- jquery 3.6.0 -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- custom js  -->
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <!-- web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <!-- vConsole -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.5/vconsole.min.js"></script>
+    <!-- vConsole Init -->
+    <script type="text/javascript">
+      var vConsole = new VConsole();
+    </script>
+  </head>
+  <body>
+    <div class="card-list-container">
+      <!-- README -->
+      <div class="card">
+        <span onclick="ShowReadMe()">
+          <label>README</label>
+        </span>
+      </div>
+
+      <!-- 基本資訊 -->
+      <div class="card">
+        <span onclick="IsMetaMaskInstalled()">
+          <label>基本資訊</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b>
+                    在行動裝置使用瀏覽器登入錢包時(小網), IOS與Android行為不相同
+                    <br />
+                    IOS會開啟MetaMask App並用App內的 "瀏覽器" 開啟此站台
+                    <br />
+                    Android只會開啟MetaMask App
+                    <br />
+                    欲有更好的用戶體驗, 可以參考
+                    <a href="https://docs.walletconnect.com/" target="_blank">
+                      [WalletConnect]
+                    </a>
+                    或
+                    <a
+                      href="https://opensea.io/login?referrer=%2Faccount"
+                      target="_blank"
+                    >
+                      [OpenSea錢包登入功能]
+                    </a>
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td class="key">用戶裝置:</td>
+                <td class="val" id="user_agent">default</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2">
+                  以太坊JavaScript API由EIP-1193指定
+                  <a
+                    href="https://eips.ethereum.org/EIPS/eip-1193"
+                    target="_blank"
+                    >[EIP-1193]</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="key">連線狀態:</td>
+                <td class="val" id="ethereum_connected">未連線以太坊</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2">
+                  請注意此值與錢包無關, 僅代表是否可以向當前鏈發出RPC請求.
+                  <br />
+                  另外若未連接至當前鏈, 則需要重新整理頁面才能建立連接,
+                  <br />
+                  若RPC請求(Promise)因任何原因失敗, 都會返回eth-rpc-error.
+                  <br />
+                  有關完整的eth-rpc-error請參閱
+                  <a
+                    href="https://eips.ethereum.org/EIPS/eip-1193"
+                    target="blank"
+                    >[EIP-1193#provider-errors]</a
+                  >
+                  <a
+                    href="https://eips.ethereum.org/EIPS/eip-1474#error-codes"
+                    target="blank"
+                    >[EIP-1474#error-codes]</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="key">安裝狀態:</td>
+                <td class="val" id="metamask_installed">未安裝MetaMask</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2">
+                  區分當前瀏覽器為MetaMask或其他兼容以太坊的瀏覽器
+                  <a
+                    href="https://browsertouse.com/blog/5098/best-web-3-0-browsers/"
+                    target="blank"
+                    >[Web 3.0 Browser]</a
+                  >
+                  <a href="https://brave.com/zh/wallet/" target="blank"
+                    >[Brave Wallet]</a
+                  >
+                  <br />
+                  此欄位也可能被非MetaMask提供者所設定, 在使用上需再注意
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 測試 -->
+      <div class="card test website">
+        <span onclick="Test()">
+          <label>測試</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b
+                    >取得BSC的ETH數量
+                    <a
+                      href="https://bscscan.com/address/0x2170Ed0880ac9A755fd29B2688956BD959F933F8#code"
+                      target="_blank"
+                      >[合約]</a
+                    >
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td class="key"></td>
+                <td class="val"></td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="test_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 登入錢包 -->
+      <div class="card website">
+        <span onclick="ConnectWallet()">
+          <label>登入錢包</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="key">當前網路:</td>
+                <td class="val" id="metamask_network">未有網路</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2">
+                  所有鏈可以參考
+                  <a href="https://chainlist.org/" target="blank"
+                    >[Chainlists]</a
+                  >
+                  <br />
+                  官方文件上表明若當前頁面所連結的鏈網路變更時,
+                  強烈建議重新整理頁面
+                </td>
+              </tr>
+              <tr>
+                <td class="key">錢包地址:</td>
+                <td class="val" id="wallet_address">0x000000000000000~</td>
+              </tr>
+              <tr>
+                <td class="key">當前餘額:</td>
+                <td class="val" id="wallet_balance">0</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="wallet_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 連線指定網路 -->
+      <div class="card website">
+        <span onclick="ConnectCustomNetwork()">
+          <label>連線指定網路</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="key">ChainId:</td>
+                <td class="val">
+                  <input
+                    id="swith_chainId"
+                    type="text"
+                    placeholder="請輸入鏈Id"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="switch_network_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 新增並連線指定網路 -->
+      <div class="card website">
+        <span onclick="AddConnectCustomNetwork()">
+          <label>新增並連線指定網路</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="key">ChainId:</td>
+                <td class="val">56 (BSC)</td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="add_network_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 新增檢視的資產 -->
+      <div class="card website">
+        <span onclick="AddAsset()">
+          <label>新增檢視的資產</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b>預設的代幣應在幣安鏈上新增</b>
+                </td>
+              </tr>
+              <tr>
+                <td class="key">token type</td>
+                <td class="val">
+                  <input
+                    id="asset_type"
+                    type="text"
+                    placeholder="輸入Token類型"
+                    value="ERC20"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="key">address:</td>
+                <td class="val">
+                  <input
+                    id="asset_address"
+                    type="text"
+                    placeholder="輸入資產合約位置"
+                    value="0x2170Ed0880ac9A755fd29B2688956BD959F933F8"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="key">symbol:</td>
+                <td class="val">
+                  <input
+                    id="asset_symbol"
+                    type="text"
+                    placeholder="輸入Token縮寫"
+                    value="ETH"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="key">decimals:</td>
+                <td class="val">
+                  <input
+                    id="asset_decimals"
+                    type="text"
+                    placeholder="輸入Token位數"
+                    value="18"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="add_asset_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 簽署 -->
+      <div class="card website">
+        <span onclick="Sign()">
+          <label>簽署</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b>純數字類似22020510直接簽署會驗證失敗 ... QQ</b>
+                </td>
+              </tr>
+              <tr>
+                <td class="key">簽署字串:</td>
+                <td class="val">
+                  <input
+                    id="sign_message"
+                    type="text"
+                    placeholder="輸入欲簽署字串"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="sign_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 驗證簽署 -->
+      <div class="card website">
+        <span onclick="VerifySign()">
+          <label>驗證簽署</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b>純數字類似22020510直接簽署會驗證失敗 ... QQ</b>
+                </td>
+              </tr>
+              <tr>
+                <td class="key">簽署字串:</td>
+                <td class="val">
+                  <input
+                    id="verify_sign_message"
+                    type="text"
+                    placeholder="輸入簽署字串"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="key">驗證字串:</td>
+                <td class="val">
+                  <input
+                    id="verify_sign_signature"
+                    type="text"
+                    placeholder="輸入驗證字串"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="verfiy_sign_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 送出交易 -->
+      <div class="card website">
+        <span onclick="SendTrans()">
+          <label>送出交易</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b>
+                    <a
+                      href="https://docs.metamask.io/guide/sending-transactions.html"
+                      target="_blank"
+                      >交易參數說明</a
+                    ></b
+                  >
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">欄位名稱</th>
+                        <th scope="col">當前值</th>
+                        <th scope="col">必填選項</th>
+                        <th scope="col">備註</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">nonce</th>
+                        <td>0x00</td>
+                        <td>ignore</td>
+                        <td>區塊鏈交易所計算的隨機數</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">gasPrice</th>
+                        <td></td>
+                        <td>option</td>
+                        <td>Gas Price</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">gas</th>
+                        <td></td>
+                        <td>option</td>
+                        <td>Gas Limit</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">from</th>
+                        <td id="send_from"></td>
+                        <td>required</td>
+                        <td>當前用戶錢包地址, 十六進制編碼的以太坊地址</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">to</th>
+                        <td id="send_to"></td>
+                        <td>semi-option</td>
+                        <td>
+                          欲進行交易的錢包或合約地址, 十六進制編碼的以太坊地址,
+                          與某些合約互動時此欄位為選填
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">value</th>
+                        <td>2386F26FC10000</td>
+                        <td>option</td>
+                        <td>
+                          貨幣的十六進制編碼值,
+                          當前傳遞10000000000000000wei=0.01ETH
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">data</th>
+                        <td></td>
+                        <td>semi-option</td>
+                        <td>創建智能合約時為必填, 另還可指定合約方法及參數</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">chainId</th>
+                        <td>0x2a(42) Kovan Testnet</td>
+                        <td>currently-ignore</td>
+                        <td>
+                          當前無用, 會選擇用戶當前的鏈網路進行交易,
+                          但未來多鏈時有用
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="key">收款錢包:</td>
+                <td class="val">
+                  <input
+                    id="send_trans_address"
+                    type="text"
+                    placeholder="輸入收款錢包地址"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="send_trans_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- DeepLink -->
+      <div class="card mobile">
+        <span onclick="DeepLink()">
+          <label>Open DeepLink</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="key" colspan="2">
+                  <b>
+                    <a
+                      href="https://docs.metamask.io/guide/mobile-best-practices.html#deeplinking"
+                      target="blank"
+                      >[Docs]</a
+                    >
+                    <a
+                      href="https://metamask.github.io/metamask-deeplinks/#"
+                      target="blank"
+                      >[Generator]</a
+                    >
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="deeplink_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

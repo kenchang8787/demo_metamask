@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "oderwat.indent-rainbow",
+        "yzhang.markdown-all-in-one",
+        "wayou.vscode-todo-highlight",
+        "vscode-icons-team.vscode-icons",
+        "ecmel.vscode-html-css",
+        "abusaidm.html-snippets",
+        "zignd.html-css-class-completion",
+        "xabikos.javascriptsnippets",
+        "ritwickdey.live-sass",
+        "ritwickdey.liveserver",
+        "esbenp.prettier-vscode"
+    ]
+}
