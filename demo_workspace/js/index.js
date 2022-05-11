@@ -58,41 +58,12 @@ function IsMobile() {
 }
 
 // 測試
-var jsonReader = $.getJSON("./json/bsc-eth.json");
 async function Test() {
   var descId = "#test_desc";
 
-  if (!IsMetaMaskInstalled()) {
-    showInDesc(descId, "尚未與以太坊建立連線", true);
-    return;
-  }
+  showInDesc(descId, `目前沒有欲測試的功能`, true);
 
-  if (ethereum.selectedAddress == null) {
-    showInDesc(descId, "請先登入錢包", true);
-    return;
-  }
-
-  showInDesc(descId, `執行測試...`, true);
-
-  var web3 = new Web3(window.ethereum);
-
-  var jsonAbi = JSON.parse(jsonReader.responseText);
-  var contractAddress = "0x2170Ed0880ac9A755fd29B2688956BD959F933F8";
-  var tokenAddress = ethereum.selectedAddress;
-  var token = new web3.eth.Contract(jsonAbi, contractAddress);
-
-  var balance = await token.methods.balanceOf(tokenAddress);
-
-  await balance
-    .call()
-    .then(result => {
-      console.log(result);
-      showInDesc(descId, `result=${result}`);
-    })
-    .catch(error => {
-      console.log(error);
-      showInDesc(descId, `error.message=${error.message}`);
-    });
+  return;
 }
 
 // 登入錢包
@@ -276,6 +247,44 @@ async function AddAsset() {
         },
       },
     })
+    .then(result => {
+      console.log(result);
+      showInDesc(descId, `result=${result}`);
+    })
+    .catch(error => {
+      console.log(error);
+      showInDesc(descId, `error.message=${error.message}`);
+    });
+}
+
+// 取得其他資產
+var jsonReader = $.getJSON("./json/bsc-eth.json");
+async function GetAsset() {
+  var descId = "#get_asset_desc";
+
+  if (!IsMetaMaskInstalled()) {
+    showInDesc(descId, "尚未與以太坊建立連線", true);
+    return;
+  }
+
+  if (ethereum.selectedAddress == null) {
+    showInDesc(descId, "請先登入錢包", true);
+    return;
+  }
+
+  showInDesc(descId, `取得其他資產...`, true);
+
+  var web3 = new Web3(window.ethereum);
+
+  var jsonAbi = JSON.parse(jsonReader.responseText);
+  var contractAddress = "0x2170Ed0880ac9A755fd29B2688956BD959F933F8";
+  var tokenAddress = ethereum.selectedAddress;
+  var token = new web3.eth.Contract(jsonAbi, contractAddress);
+
+  var balance = await token.methods.balanceOf(tokenAddress);
+
+  await balance
+    .call()
     .then(result => {
       console.log(result);
       showInDesc(descId, `result=${result}`);

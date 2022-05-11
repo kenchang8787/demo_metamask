@@ -58,6 +58,18 @@ html, body {
     cursor: inherit;
 }
 
+.card button {
+    display: block;
+    margin: 0.5rem auto;
+    width: 90px;
+    height: 35px;
+    background-color: whitesmoke;
+    color: dimgray;
+    font-size: 0.9rem;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 1215px) {
     .card {
         width: 80%;

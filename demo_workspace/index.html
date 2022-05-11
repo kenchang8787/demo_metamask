@@ -11,26 +11,6 @@
 
     <!-- custom css -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
-
-    <!-- jquery 3.6.0 -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- custom js  -->
-    <script type="text/javascript" src="js/index.js"></script>
-
-    <!-- web3.js -->
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-
-    <!-- vConsole -->
-    <script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.14.5/vconsole.min.js"></script>
-    <!-- vConsole Init -->
-    <script type="text/javascript">
-      var vConsole = new VConsole();
-    </script>
   </head>
   <body>
     <div class="card-list-container">
@@ -154,11 +134,9 @@
               <tr>
                 <td class="desc" colspan="2">
                   <b
-                    >取得BSC的ETH數量
-                    <a
-                      href="https://bscscan.com/address/0x2170Ed0880ac9A755fd29B2688956BD959F933F8#code"
-                      target="_blank"
-                      >[合約]</a
+                    >之後可能要測試 WalletConnect
+                    <a href="https://walletconnect.com/" target="_blank"
+                      >[官方網站]</a
                     >
                   </b>
                 </td>
@@ -286,7 +264,7 @@
             <tbody>
               <tr>
                 <td class="desc" colspan="2">
-                  <b>預設的代幣應在幣安鏈上新增</b>
+                  <b>預設的代幣應在幣安鏈上新增(BSC/ETH)</b>
                 </td>
               </tr>
               <tr>
@@ -335,6 +313,38 @@
               </tr>
               <tr>
                 <td class="desc" colspan="2" id="add_asset_desc"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 取的特定資產餘額 -->
+      <div class="card website">
+        <span onclick="GetAsset()">
+          <label>取得餘額</label>
+        </span>
+        <div class="card-table">
+          <table>
+            <colgroup>
+              <col class="key" span="1" />
+              <col class="val" span="1" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="desc" colspan="2">
+                  <b
+                    >預設取得幣安鏈上的ETH餘額
+                    <a
+                      href="https://bscscan.com/address/0x2170Ed0880ac9A755fd29B2688956BD959F933F8"
+                      target="_blank"
+                      >[智能合約]
+                    </a>
+                  </b>
+                </td>
+              </tr>
+              <tr>
+                <td class="desc" colspan="2" id="get_asset_desc"></td>
               </tr>
             </tbody>
           </table>
@@ -568,4 +578,28 @@
       </div>
     </div>
   </body>
+
+  <!-- jquery 3.6.0 -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- custom js  -->
+  <script type="text/javascript" src="js/index.js"></script>
+
+  <!-- web3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+  <!-- vConsole -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/vconsole@3.14.6/dist/vconsole.min.js"
+    integrity="sha256-JxcB3F4saQXi9hm+WN2bzf2xH23JucwxTuBIdAqhS8c="
+    crossorigin="anonymous"
+  ></script>
+  <!-- vConsole Init -->
+  <script type="text/javascript">
+    var vConsole = new VConsole();
+  </script>
 </html>
