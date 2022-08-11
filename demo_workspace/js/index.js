@@ -391,7 +391,7 @@ async function SendTrans() {
       to: $("#send_trans_address").val(),
       from: ethereum.selectedAddress, // 用戶當前選擇的錢包地址
       value: "2386F26FC10000", // (10000000000000000)
-      data: "", // 好像沒用
+      data: $("#send_trans_data").val(), // 好像沒用
       chainId: "0x2a", // Kavon Testnet
     },
   ];
