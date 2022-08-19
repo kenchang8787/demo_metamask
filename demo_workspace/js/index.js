@@ -393,7 +393,7 @@ async function SendTrans() {
       gas: "", // 這邊代入的值是 10000 (網站建議的 gas fee)
       to: $("#send_trans_address").val(),
       from: ethereum.selectedAddress, // 用戶當前選擇的錢包地址
-      value: toHex(amount),
+      value: toHex(amount), // 金額 * 18位小數點 並轉為16進位
       data: $("#send_trans_data").val(), // 好像沒用
       chainId: "0x2a", // Kavon Testnet
     },
