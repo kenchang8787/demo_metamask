@@ -277,7 +277,7 @@ async function GetAsset() {
   var web3 = new Web3(window.ethereum);
 
   var jsonAbi = JSON.parse(jsonReader.responseText);
-  var contractAddress = "0x2170Ed0880ac9A755fd29B2688956BD959F933F8";
+  var contractAddress = $("#get_accect_contract_addr").val();
   var tokenAddress = ethereum.selectedAddress;
   var token = new web3.eth.Contract(jsonAbi, contractAddress);
 
